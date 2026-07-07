@@ -31,8 +31,8 @@ st.divider()
 # Charts
 # 1. Revenue by Product
 fig, ax = plt.subplots(figsize=(10, 6))
-rev = df.groupby('Product')['Total'].sum().sort_values()
-sns.barplot(x=rev.values, y=rev.index, palette='viridis')
+rev = df.groupby('Product')['Total'].sum().sort_values(ascending=False)
+sns.barplot(x=rev.values, y=rev.index)
 ax.set(xlabel='Revenue ($)', ylabel='Product', title='Revenue by Product')
 st.pyplot(fig)
 
